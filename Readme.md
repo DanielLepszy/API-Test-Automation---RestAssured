@@ -11,16 +11,28 @@ Test Automation coding challenge :muscle:
 ## Dependencies
 All project dependencies are stored in <b>pom.xml</b> file
 
-## How to run tests: 
-### Install dependencies:
-#### Build docker image from project root path:
+## Installation: 
+### Meaven dependencies:
 ```bash
 mvn clean install
 ```
-During image build, all packages and dependencies are installed as well.
+### Run all test suites:
+```bash
+mvn surefire-report:report
+```
+Test report is place on:  **~/target/site/surefire-report.html**
+
+### Run test suites by @Tag annotation:
+```bash
+mvn test -Dgroups="<TAG_NAME>" surefire-report:report-only 
+```
+
+Existing Tags: CRUD | SMOKE
+
+**Remember to terminate the reports data from previous tests execution stored in: ~/target/surefire-reports**
+
 
 # Exercise:
-
 1. Write automated API tests in which you will add a new animal.
 
 Write an invalid API test in which you will get an error.
