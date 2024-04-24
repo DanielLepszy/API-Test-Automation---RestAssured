@@ -1,3 +1,5 @@
+package Models;
+
 import java.util.Objects;
 
 public class Animal {
@@ -9,7 +11,9 @@ public class Animal {
     public int getId() {
         return id;
     }
-
+    public String getStringId() {
+        return String.valueOf(id);
+    }
     public int getAge() {
         return age;
     }
